@@ -1,0 +1,7 @@
+Streamlit==1.37.1
+transformers
+protobuf
+jinja2
+pytorch==2.5.1
+torchvision
+torchaudio
