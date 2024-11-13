@@ -1,5 +1,8 @@
 import streamlit as st 
 import time
+import os
+
+import tensorflow as tf
 # from streamlit_extras.stylable_container import stylable_container
 
 # When open it shows balloons
@@ -92,3 +95,6 @@ if analyze_button:
     else:
         st.warning("I am speechless here 😶. Please provide some text to analyze sentiment.")
         st.image("https://th.bing.com/th/id/OIP.xqHR0bxoLZeRA1xO_xM41wHaFx?rs=1&pid=ImgDetMain", width=200)
+
+if clear_button:
+    st.rerun()
