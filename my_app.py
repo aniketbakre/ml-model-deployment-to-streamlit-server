@@ -43,7 +43,7 @@ def download_dir(local_path, s3_prefix):
                     # Attempt the file download
                     try:
                         s3.download_file(bucket_name, s3_key, local_file)
-                        print(f"Downloaded {s3_key} to {local_file}")
+                        s3.write(f"Downloaded {s3_key} to {local_file}")
                     
                     except PermissionError as e:
                         print(f"Permission denied for file {local_file}: {e}")
@@ -75,7 +75,7 @@ analyze_button = col1.button("Analyze Sentiment")
 clear_button = col2.button("Clear")
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-classifier = pipeline('text-classification', model='mlops-tinybert-sentimentanalysis', device = device)
+classifier = pipeline('text-classification', model='mlops-tinybert-sentimentanalysis/ml_model', device = device)
 output = classifier(user_text)
 
 
